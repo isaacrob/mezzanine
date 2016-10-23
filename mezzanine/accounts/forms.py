@@ -59,7 +59,7 @@ class LoginForm(Html5Mixin, forms.Form):
             raise forms.ValidationError(
                              ugettext("Invalid username/email and password"))
         elif not self._user.is_active:
-            raise forms.ValidationError(ugettext("Your account is inactive"))
+            raise forms.ValidationError(ugettext("Please verify your email"))
         return self.cleaned_data
 
     def save(self):
